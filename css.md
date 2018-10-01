@@ -5,7 +5,7 @@
 - [Specificity](#specificity)
 - [ID Selectors](#id-selectors)
 - [Flat Selectors](#flat-selectors)
-- [Block, Element, Modifier (BEM)](#block,-element,-modifier-(bem))
+- [Block, Element, Modifier (BEM)](#block-element-modifier-bem)
 - [Sass](#sass)
 
 ## Specificity
