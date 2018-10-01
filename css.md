@@ -24,7 +24,7 @@ Overly specific CSS rules can cause a lot of frustration when our css doesn't wo
 ```
 ```html
 <div class="header">
-  <h1 class=".highlight">What color will I be?</h1>
+  <h1 class="highlight">What color will I be?</h1>
 </div>
 ```
 
