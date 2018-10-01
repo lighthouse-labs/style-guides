@@ -3,9 +3,9 @@
 ## Table of Contents
 
 - [Specificity](#specificity)
-- [Block, Element, Modifier (BEM)](#block,-element,-modifier-(bem))
 - [ID Selectors](#id-selectors)
 - [Flat Selectors](#flat-selectors)
+- [Block, Element, Modifier (BEM)](#block,-element,-modifier-(bem))
 - [Sass](#sass)
 
 ## Specificity
@@ -24,7 +24,7 @@ Overly specific CSS rules can cause a lot of frustration when our css doesn't wo
 ```
 ```html
 <div class="header">
-  <h1 class=".highlight">What color will I be?</h1>
+  <h1 class="highlight">What color will I be?</h1>
 </div>
 ```
 
@@ -33,6 +33,46 @@ We want it to be yellow, but because of a specificity mistake, it will be blue.
 > For more on this subject:
 >   * [CSS Wizardry's article](http://csswizardry.com/2014/07/hacks-for-dealing-with-specificity/) on dealing with specificity.
 >   * [CSS trick's article](https://css-tricks.com/strategies-keeping-css-specificity-low/) on keeping css specificity low.
+
+## ID selectors
+
+While it is possible to select elements by ID in CSS, it should generally be considered an anti-pattern. ID selectors introduce an unnecessarily high level of specificity to your rule declarations, and they are not reusable.
+
+**Bad**
+
+```css
+#page__title {
+  color: red;
+}
+```
+
+**Good**
+
+```css
+.page__title {
+  color: red;
+}
+```
+
+## Flat Selectors
+
+Avoid unnecessarily increasing the specificity by nesting selectors. Instead, try using a single selector. 
+
+**Bad**
+
+```css
+body .module .title {
+  color: red;
+}
+```
+
+**Good**
+
+```css
+.module__title {
+  color: red;
+}
+```
 
 ## Block, Element, Modifier (BEM)
 
@@ -77,46 +117,6 @@ We encourage using them BEM naming convention for classes in HTML and CSS for th
 * `.tweet__header` is an "element" and represents a descendant of `.tweet` that helps compose the block as a whole.
 * `.tweet--featured` is a "modifier" and represents a different state or variation on the `.tweet` block.
 
-## Flat Selectors
-
-Avoid unnecessarily increasing the specificity by nesting selectors. Instead, try using a single selector. 
-
-**Bad**
-
-```css
-body .module .title {
-  color: red;
-}
-```
-
-**Good**
-
-```css
-.module__title {
-  color: red;
-}
-```
-
-## ID selectors
-
-While it is possible to select elements by ID in CSS, it should generally be considered an anti-pattern. ID selectors introduce an unnecessarily high level of specificity to your rule declarations, and they are not reusable.
-
-**Bad**
-
-```css
-#page__title {
-  color: red;
-}
-```
-
-**Good**
-
-```css
-.page__title {
-  color: red;
-}
-```
-
 ## Sass
 
 If you are using `sass`, use nesting to generate BEM rules.
@@ -142,7 +142,6 @@ If you are using `sass`, use nesting to generate BEM rules.
   &__header { /* Header Rules */ }
 }
 ```
-
 
 
 **[⬆ back to top](#table-of-contents)**
