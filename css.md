@@ -6,7 +6,7 @@
 - [Block, Element, Modifier (BEM)](#block,-element,-modifier-(bem))
 - [ID Selectors](#id-selectors)
 - [Flat Selectors](#flat-selectors)
-- [License](#license)
+- [Sass](#sass)
 
 ## Specificity
 
@@ -114,6 +114,32 @@ While it is possible to select elements by ID in CSS, it should generally be con
 ```css
 .page__title {
   color: red;
+}
+```
+
+## Sass
+
+If you are using `sass`, use nesting to generate BEM rules.
+
+**Bad**
+
+
+```css
+.tweet { 
+  /* Tweet Rules */ 
+}
+.tweet__header { 
+  /* Header Rules */
+}
+```
+
+**Good**
+
+
+```scss
+.tweet{
+  /* Tweet Rules */
+  &__header { /* Header Rules */ }
 }
 ```
 
